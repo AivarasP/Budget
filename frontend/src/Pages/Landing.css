@@ -1,0 +1,46 @@
+.main-title,
+.main-para {
+    color: #000000d0
+}
+
+.main-title {
+    padding-top: 10rem;
+    font-size: 5rem;
+    font-family: 'Fascinate', cursive;
+    text-transform: uppercase
+}
+
+.main-para {
+    font-size: 2.3rem;
+}
+
+#btns span  {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    color:white;
+    
+}
+
+#btns span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    
+}
+
+#btns:hover span{
+  padding-right: 25px;
+  
+}
+#btns:hover{
+    background:rgb(91, 143, 95);
+}
+
+#btns:hover span:after {
+  opacity: 1;
+  right: 0;
+}

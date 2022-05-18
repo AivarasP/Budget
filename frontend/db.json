@@ -1,0 +1,34 @@
+{
+  "income": [
+    {
+      "date": "2022-05-11",
+      "pavadinimas": "Darbas",
+      "suma": "700",
+      "id": 1
+    },
+    {
+      "date": "2022-04-16",
+      "pavadinimas": "ASdadas",
+      "suma": "400",
+      "id": 2
+    },
+    {
+      "date": "2022-05-07",
+      "pavadinimas": "Darbas",
+      "suma": "1000",
+      "id": 3
+    },
+    {
+      "date": "2022-05-13",
+      "pavadinimas": "Darbas",
+      "suma": "700",
+      "id": 4
+    },
+    {
+      "date": "2022-05-10",
+      "pavadinimas": "sasdas",
+      "suma": "70000",
+      "id": 5
+    }
+  ]
+}

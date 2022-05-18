@@ -1,0 +1,51 @@
+h2 {
+    font-weight: 300;
+    padding:40px
+}
+
+form {
+    display: inline-block;
+    background: #f3f3f3;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0 1rem 0
+}
+
+form label {
+    float: left;
+    font-size: .9rem;
+    margin: 0;
+    padding: 0
+}
+
+.right-label {
+    float: right;
+    cursor: pointer
+}
+
+input {
+    width: 20rem;
+    padding: .3rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+}
+
+#sub_btn {
+    display: block;
+    width: 100%;
+    padding: .3rem;
+    border: none;
+    background: #222;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    background: rgb(70, 116, 74);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.9);
+}
+
+#sub_btn:hover {
+    background:rgb(91, 143, 95);
+    transition: all .5s
+}
