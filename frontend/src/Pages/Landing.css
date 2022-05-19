@@ -13,7 +13,9 @@
 .main-para {
     font-size: 2.3rem;
 }
-
+#btns{
+    background-color: rgb(180, 93, 93);
+}
 #btns span  {
     display: inline-block;
     position: relative;
@@ -37,7 +39,8 @@
   
 }
 #btns:hover{
-    background:rgb(91, 143, 95);
+    background:rgb(160, 179, 55);
+    transition:all .9s;
 }
 
 #btns:hover span:after {

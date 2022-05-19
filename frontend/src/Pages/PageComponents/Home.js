@@ -2,7 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import UserService from "../../services/user.service";
 function Home() {
+  const [content, setContent] = useState("");
   const [income, setIncome] = useState([]);
   const [expense, setExpense] = useState([]);
   const loadExpense = () => {
@@ -65,10 +67,27 @@ function Home() {
       }
     })
   }
+  useEffect(() => {
+    UserService.getPublicContent().then(
+      (response) => {
+        setContent(response.data);
+      },
+      (error) => {
+        const _content =
+          (error.response && error.response.data) ||
+          error.message ||
+          error.toString();
+
+        setContent(_content);
+      }
+    );
+  }, []);
   return (
     <div>
     <div className="w-full h-full flex flex-col px-10 py-8">
+      <h3>{content}</h3>
       <div className="w-full flex flex-col min-h-[50vh] justify-center items-center">
+        
         <h1 className="text-black  text-3xl font-medium font-Montserrat">
           Pajamos
         </h1>
