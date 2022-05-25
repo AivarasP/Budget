@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-
+import authHeader from '../../services/auth-header';
 function EditExpense() {
     const [date, SetDate] = useState("");
     const [comment, SetComment] = useState("");
@@ -13,7 +13,7 @@ function EditExpense() {
 
 
     useEffect(()=>{
-        axios.get(`http://localhost:8080/api/expenses/${id}`).then((res)=>{
+        axios.get(`http://localhost:8080/api/expenses/${id}`, { headers: authHeader() }).then((res)=>{
             SetDate(res.data.date)
             SetComment(res.data.pavadinimas)
             SetSum(res.data.suma)
@@ -46,7 +46,7 @@ function EditExpense() {
                 denyButtonText: `Neišsaugoti`,
               }).then((result) => {
                 if (result.isConfirmed) {
-                axios.put(`http://localhost:8080/api/expenses/${id}`,data).then(navigate("/home"))
+                axios.put(`http://localhost:8080/api/expenses/${id}`,data, { headers: authHeader() }).then(navigate("/home"))
                   Swal.fire('Išsaugota!', '', 'success')
                 } else if (result.isDenied) {
                   Swal.fire('Pakeitimai nebuvo išsaugoti', '', 'info')

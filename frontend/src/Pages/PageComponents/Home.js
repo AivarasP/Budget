@@ -3,17 +3,20 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import UserService from "../../services/user.service";
+import authHeader from "../../services/auth-header";
 function Home() {
   const [content, setContent] = useState("");
   const [income, setIncome] = useState([]);
   const [expense, setExpense] = useState([]);
   const loadExpense = () => {
-    axios.get("http://localhost:8080/api/expenses").then((res) => {
+    axios.get("http://localhost:8080/api/expenses", { headers: authHeader() }).then((res) => {
+      
       setExpense(res.data.reverse());
     });
   }
   const loadIncome = () => {
-    axios.get("http://localhost:8080/api/incomes").then((res) => {
+    axios.get("http://localhost:8080/api/incomes",{ headers: authHeader() }).then((res) => {
+      console.log("Incomes: " + res.data);
       setIncome(res.data.reverse());
     });
   };
@@ -37,7 +40,7 @@ function Home() {
       confirmButtonText: 'Taip, ištrinti!'
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:8080/api/incomes/${id}`).then(loadIncome())
+        axios.delete(`http://localhost:8080/api/incomes/${id}`,{ headers: authHeader() }).then(()=>loadIncome())
         Swal.fire(
           'Įrašas ištrintas!',
           '',
@@ -58,7 +61,7 @@ function Home() {
       confirmButtonText: 'Taip, ištrinti!'
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:8080/api/expenses/${id}`).then(loadExpense())
+        axios.delete(`http://localhost:8080/api/expenses/${id}`,{ headers: authHeader() }).then(loadExpense())
         Swal.fire(
           'Išlaidos ištrintos!',
           '',
@@ -85,7 +88,7 @@ function Home() {
   return (
     <div>
     <div className="w-full h-full flex flex-col px-10 py-8">
-      <h3>{content}</h3>
+      {/* <h3>{content}</h3> */}
       <div className="w-full flex flex-col min-h-[50vh] justify-center items-center">
         
         <h1 className="text-black  text-3xl font-medium font-Montserrat">

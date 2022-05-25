@@ -48,8 +48,9 @@ const SignInPage = () => {
     if (checkBtn.current.context._errors.length === 0) {
       AuthService.login(username, password).then(
         () => {
-          navigate("/home");
-          window.location.reload();
+          console.log("LoginPage: " + username)
+           navigate("/home");
+          // window.location.reload();
         },
         (error) => {
           const resMessage =
@@ -72,7 +73,8 @@ const SignInPage = () => {
     <div className="col-md-12 text-center font-medium font-Montserrat " style={HeaderStyle}>
         <h1 className="text-3xl" style={{
             position:"relative",
-            top:100
+            top:100,
+            color:"white"
         }} >Prisijungti</h1>
         <h1 className="main-title text-center"style={{
             userSelect: "none"

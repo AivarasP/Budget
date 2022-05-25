@@ -4,16 +4,17 @@ import { Link } from "react-router-dom";
 import './NavBar.css'
 import AuthService from "../../services/auth.service";
 import EventBus from "../../common/EventBus";
+import authHeader from "../../services/auth-header";
 const Navbar = () => {
     const [income, setIncome] = useState([]);
 const [expense, setExpense] = useState([]);
   const loadExpense = () => {
-    axios.get("http://localhost:8080/api/expenses").then((res) => {
+    axios.get("http://localhost:8080/api/expenses",{ headers: authHeader() }).then((res) => {
       setExpense(res.data.reverse());
     });
   }
   const loadIncome = () => {
-    axios.get("http://localhost:8080/api/incomes").then((res) => {
+    axios.get("http://localhost:8080/api/incomes",{ headers: authHeader() }).then((res) => {
       setIncome(res.data.reverse());
     });
   };
@@ -65,14 +66,12 @@ const [expense, setExpense] = useState([]);
    
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <Link to={"/"} className="navbar-brand">
-          bezKoder
-        </Link>
+        <p  className="navbar-brand">
+        
+        </p>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
-            <Link to={"/home"} className="nav-link">
-              Home
-            </Link>
+          <span style={{color:'red'}}>Balansas :</span> {balansas - islaidos}
           </li>
 
           {showModeratorBoard && (

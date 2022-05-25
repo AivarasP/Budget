@@ -117,7 +117,8 @@ const SignUpPage = () => {
     <div> 
         <h1 className="text-3xl "style={{
             position:"relative",
-            top:80
+            top:80,
+            color:"white"
         }}>Registracija</h1>
         <h1 className="main-title text-center" style={{
             userSelect: "none"

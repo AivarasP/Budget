@@ -10,7 +10,7 @@ function AddExpense() {
     const [income, setIncome] = useState([]);
 
       const loadIncome = () => {
-        axios.get("http://localhost:8080/api/incomes").then((res) => {
+        axios.get("http://localhost:8080/api/incomes", { headers: authHeader() }).then((res) => {
           setIncome(res.data.reverse());
         });
       };
@@ -53,7 +53,7 @@ function AddExpense() {
                 'Išlaidos pridėtos!',
                 '',
                 'success',
-                axios.post('http://localhost:8080/api/expenses', data).then(
+                axios.post('http://localhost:8080/api/expenses' ,data,{ headers: authHeader() }).then(
                 navigate('/home')
                 )
               )

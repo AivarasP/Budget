@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import authHeader from "../../services/auth-header";
 
 function AddIncome() {
     const [date, SetDate] = useState("");
@@ -30,7 +31,7 @@ function AddIncome() {
                 'Pajamos pridėtos!',
                 '',
                 'success',
-                axios.post('http://localhost:8080/api/incomes', data).then(
+                axios.post('http://localhost:8080/api/incomes', data, { headers: authHeader() }).then(
                 navigate('/home')
                 )
               )
