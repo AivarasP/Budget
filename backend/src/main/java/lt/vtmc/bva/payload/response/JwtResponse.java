@@ -3,26 +3,32 @@ package lt.vtmc.bva.payload.response;
 import java.util.List;
 
 public class JwtResponse {
- private String token;
+ private String accessToken;
  private String type = "Bearer";
  private Long id;
  private String username;
 
  public JwtResponse(String accesToken, Long id, String username, String email, List<String> roles) {
-	 this.token = accesToken;
+	 this.accessToken = accesToken;
 	 this.id = id;
 	 this.username = username;
 	 this.email = email;
 	 this.roles = roles;
  }
  
- public String getToken() {
-	return token;
+ 
+
+public String getAccessToken() {
+	return accessToken;
 }
 
-public void setToken(String token) {
-	this.token = token;
+
+
+public void setAccessToken(String accessToken) {
+	this.accessToken = accessToken;
 }
+
+
 
 public String getType() {
 	return type;
