@@ -33,19 +33,3 @@ input {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
 }
 
-#sub_btn {
-    display: block;
-    width: 100%;
-    padding: .3rem;
-    border: none;
-    background: #222;
-    color: rgb(255, 255, 255);
-    border-radius: 10px;
-    background: rgb(173, 149, 24);
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.9);
-}
-
-#sub_btn:hover {
-    background:rgb(171, 216, 47);
-    transition: all .5s
-}

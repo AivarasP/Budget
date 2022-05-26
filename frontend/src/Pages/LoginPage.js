@@ -1,9 +1,8 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import BackgroundImage from '../assets/images/bg.jpg'
+import BackgroundImage from '../assets/images/bgw.jpg'
 import AuthService from "../services/auth.service";
 import { Link } from "react-router-dom";
 const required = (value) => {
@@ -71,14 +70,37 @@ const SignInPage = () => {
 
   return (
     <div className="col-md-12 text-center font-medium font-Montserrat " style={HeaderStyle}>
+        <nav className="navbarlanding">
+        <div className="navbar-nav mr-auto">
+          <Link to="/"><h1 id="btnnavs" style={{userSelect:'none'}}>Pinigu <span style={{color:'#AAFF00'}}>Medis</span></h1></Link>
+        </div>
+          <Link to="/aboutus">
+            <button id="btnnavlan">
+              APIE MUS
+            </button>
+            </Link>
+            <Link to="/contacts">
+            <button id="btnnavlan">
+              KONTAKTAI
+            </button>
+            </Link>
+            
+            
+            <div className="navbar-nav ml-auto">
+            
+            <Link to="/register">
+            <button id="btnnavlan">
+              REGISTRACIJA
+            </button>
+            </Link>  
+          </div>
+      </nav>
         <h1 className="text-3xl" style={{
             position:"relative",
             top:100,
-            color:"white"
+            color:"black"
         }} >Prisijungti</h1>
-        <h1 className="main-title text-center"style={{
-            userSelect: "none"
-        }}>Pradėkite Taupyti!</h1>
+        
         
       <div className="card card-container">
         <img
@@ -124,11 +146,11 @@ const SignInPage = () => {
           </div>
 
           <div className="form-group">
-            <button className="btn btn-primary btn-block"id="btns" disabled={loading}>
+            <button className="btn btn-primary btn-block"id="btn" disabled={loading}>
               {loading && (
                 <span className="spinner-border spinner-border-sm" ></span>
               )}
-              <span>Prisijungti</span>
+              Prisijungti
             </button>
           </div>
           <div>Dar neturite vartojo? <Link to="/register" style={{color:'#33FFBE'}}> Prisiregistruoti.</Link></div>

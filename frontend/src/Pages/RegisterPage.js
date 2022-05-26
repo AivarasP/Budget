@@ -1,9 +1,8 @@
 import React, { useState, useRef } from "react";
 import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
-import BackgroundImage from '../assets/images/bg.jpg'
+import BackgroundImage from '../assets/images/bgw.jpg'
 import AuthService from "../services/auth.service";
 import Swal from "sweetalert2";
 import { Link,useNavigate } from "react-router-dom";
@@ -87,7 +86,7 @@ const SignUpPage = () => {
             Swal.fire({
                 position: 'top',
                 icon: 'success',
-                color: '#EE9318',
+                color: 'rgba(255, 0, 255, 0.5)',
                 title: 'Prisiregistravote!',
                 showConfirmButton: false,
                 timer: 1500
@@ -114,15 +113,37 @@ const SignUpPage = () => {
 
   return (
       <header style={HeaderStyle} className="text-center font-medium font-Montserrat">
+    <nav className="navbarlanding">
+        <div className="navbar-nav mr-auto">
+          <Link to="/"><h1 id="btnnavs"style={{userSelect:'none'}}>Pinigu <span style={{color:'#AAFF00'}}>Medis</span></h1></Link>
+        </div>
+          <Link to="/aboutus">
+            <button id="btnnavlan">
+              APIE MUS
+            </button>
+            </Link>
+            <Link to="/contacts">
+            <button id="btnnavlan">
+              KONTAKTAI
+            </button>
+            </Link>
+            
+            
+            <div className="navbar-nav ml-auto">
+            
+            <Link to="/login">
+            <button id="btnnavlan">
+              PRISIJUNGTI
+            </button>
+            </Link>  
+          </div>
+      </nav>
     <div> 
         <h1 className="text-3xl "style={{
             position:"relative",
-            top:80,
-            color:"white"
+            top:100,
+            color:"black"
         }}>Registracija</h1>
-        <h1 className="main-title text-center" style={{
-            userSelect: "none"
-        }}>Pradėkite Taupyti!</h1>
        
       <div className="card card-container">
         <img
@@ -189,7 +210,7 @@ const SignUpPage = () => {
               </div>
 
               <div className="form-group">
-                <button className="btn btn-primary btn-block" id="btns"><span>Užsiregistruoti</span></button>
+                <button className="btn btn-primary btn-block" id="btn">Užsiregistruoti</button>
               </div>
               <div>Jau turite vartotoja? <Link to="/login" style={{color:'#33FFBE'}}> Prisijungti.</Link></div>
             </div>

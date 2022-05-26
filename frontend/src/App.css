@@ -67,3 +67,62 @@ label {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
+#btn{
+  background-color: rgba(0, 0, 0, 0.692);
+  display: block;
+  width: 100%;
+  padding: .3rem;
+  border: none;
+  background: #222;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  background: rgba(255, 0, 255, 0.6);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.9);
+}
+#btn span  {
+    display: inline-block;
+    
+    transition: 0.5s;
+    color:white;
+    
+}
+
+#btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    
+}
+
+#btn:hover span{
+  padding-right: 25px;
+  
+}
+#btn:hover{
+    background:rgba(252, 124, 252);
+    transition:all .9s;
+}
+
+#btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#sub_btn {
+  display: block;
+  width: 100%;
+  padding: .3rem;
+  border: none;
+  background: #222;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  background: rgb(173, 149, 24);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.9);
+}
+
+#sub_btn:hover {
+  background:rgb(171, 216, 47);
+  transition: all .5s
+}

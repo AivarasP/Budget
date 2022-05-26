@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap');
+.navbar {
+    padding: 20px;
+    display: flex;
+    top:0;
+    max-width:95%;
+    margin: 0 auto;
+    border-bottom: 1px solid #f2f2f2;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.5);
+    border-radius:10px;
+    justify-content:space-evenly;
+  }
+
+
+  .balance{
+    color:rgb(18, 175, 58);
+    margin: 0 auto;
+    
+  }
+  #bal{
+    font-family: 'Proza Libre', sans-serif;
+    margin-left:20px;
+    margin-right:20px;
+    color:rgba(0, 0, 0, 0.678);
+    font-size:18px 
+  }
+  #btnnav{
+    font-family: 'Proza Libre', sans-serif;
+    margin-left:20px;
+    margin-right:20px;
+    color:rgb(0, 0, 0);
+    transition:0.3s;
+    font-size:13px
+  }
+  #btnnav:hover{
+  color:rgb(88, 88, 88);
+  }
