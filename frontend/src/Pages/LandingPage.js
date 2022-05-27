@@ -1,53 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Landing.css'
-import BackgroundImage from '../assets/images/bgw.jpg'
+import BackgroundImage from '../assets/images/gb.jpg'
 
  function LandingPage() {
     return (
         <header style={ HeaderStyle }>
-            <nav className="navbarlanding">
-        <div className="navbar-nav mr-auto">
-          <h1 id="btnnavs"style={{userSelect:'none'}}>Pinigu <span style={{color:'#AAFF00'}}>Medis</span></h1>
-        </div>
-          <Link to="/aboutus">
-            <button id="btnnavlan">
-              APIE MUS
-            </button>
-            </Link>
-            <Link to="/contacts">
-            <button id="btnnavlan">
-              KONTAKTAI
-            </button>
-            </Link>
-            <Link to="/login">
-            <button  id="btnnavlan">
-              PRISIJUNGTI
-            </button>
-            </Link>
-            
-            <div className="navbar-nav ml-auto">
-            
-            <Link to="/register">
-            <button id="btnnavlan">
-              REGISTRACIJA
-            </button>
-            </Link>  
-          </div>
-      </nav>
+      <div className='cssanimation sequence fadeInBottom'>
             <h1 className="main-title text-center"style={{
             userSelect: "none",
-            opacity:0.8
+            opacity:0.6,
+            color:'white'
         }}>Pradėkite Taupyti!</h1>
             <h2 className=" text-center" style={
-                {fontSize:30}
+                {fontSize:30, color:'white',opacity:0.6}
+               
 
             }>Prisijunkite ir pradėkite taupyti pinigus!</h2>
             <div className="buttons text-center">
                 <Link to="/register">
                     <button className="primary-buttons" id="btns"><span>Pradėti</span></button>
                 </Link>
+          </div>
             </div>
+           
         </header>
         
     )
@@ -56,7 +32,6 @@ import BackgroundImage from '../assets/images/bgw.jpg'
 const HeaderStyle = {
     width: "100%",
     height: "100vh",
-    position:"absolute",
     background: `url(${BackgroundImage})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

@@ -1,0 +1,25 @@
+.navbarlanding{
+    position:absolute;
+    left:0;
+    right:0;
+    padding: 20px;
+    display: flex;
+    max-width:70%;
+    margin: 0 auto;
+    z-index:10;
+}
+#btnnavlan{
+    font-family: 'Proza Libre', sans-serif;
+    margin-left:20px;
+    margin-right:20px;
+    color:rgb(255, 255, 255);
+    transition:0.5s;
+    font-size:13px
+  }
+  #btnnavlan:hover{
+  color:rgba(148, 255, 126, 0.822)
+  }
+  #btnnavs{
+    font-family: 'Coming Soon', cursive;
+    font-size: 25px;
+  }

@@ -15,7 +15,11 @@ import Profile from "./Pages/Components/Profile";
 import IncomePage from "./Pages/IncomePage";
 import ExpensePage from "./Pages/ExpensePage";
 import './App.css'
-
+import AboutUs from "./Pages/AboutUs";
+import LandingNavbar from "./Pages/Components/LandingNavbar";
+import ContactUs from "./Pages/ContactUs";
+import Footer from "./Pages/Footer";
+import LogNavbar from "./Pages/Components/LogNavbar";
 function App() {
 
   const AuthRoute = ({ children }) => {
@@ -35,9 +39,9 @@ function App() {
   return (
       <div className="App"> 
         <Routes>
-          <Route path="/" element={<Fragment><LandingPage/></Fragment>} />
-          <Route path="/login" element={<SignInPage/>} />
-          <Route path="/register" element={<SignUpPage/>} />
+          <Route path="/" element={<Fragment><LandingNavbar/><LandingPage/><AboutUs/><ContactUs/><Footer/></Fragment>} />
+          <Route path="/login" element={<Fragment><LogNavbar/><SignInPage/></Fragment>} />
+          <Route path="/register" element={<Fragment><LogNavbar/><SignUpPage/></Fragment>} />
           <Route path="/profile" element={<AuthRoute><Fragment><Navbar/><Profile/></Fragment></AuthRoute>} />
           <Route path="/home" element={<AuthRoute><Fragment><Navbar/><Home/></Fragment></AuthRoute>} />
           <Route path ="/income" element={<AuthRoute><Fragment><Navbar/><IncomePage/></Fragment></AuthRoute>} />
